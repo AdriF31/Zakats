@@ -10,16 +10,19 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomPaint(
-        painter: GreenPainter(),
-        child: ListView(
+      body: ListView(
           children: <Widget>[
             Column(
               children: <Widget>[
-                Container(
+                ClipPath(
+                  clipper: MyClipper(),
+                  child: Container(
+                    height: 300,
+                    decoration: BoxDecoration(
+                      color: Color.fromRGBO(156, 241, 150, 1)
+                    ),
 
-                  height: 300,
-
+                  ),
                 )
               ],
             ),
@@ -30,7 +33,9 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     GestureDetector(
-                      onTap: (){},
+                      onTap: (){
+                        Navigator.pushNamed(context, "/zakatpedia");
+                      },
                       child: Container(
                         width: 150,
                         height: 150,
@@ -62,7 +67,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                     SizedBox(width: 20,),
                     GestureDetector(
-                      onTap: (){},
+                      onTap: (){
+                        Navigator.pushNamed(context, "/zakatfitrah");
+                      },
                       child: Container(
                         width: 150,
                         height: 150,
@@ -81,7 +88,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                             SizedBox(height: 10,),
                             Text(
-                              "ZAKATPEDIA",
+                              "ZAKAT FITRAH",
                               style: TextStyle(
                                   color: Colors.black,
                                   fontFamily: 'montserrat',
@@ -99,7 +106,9 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     GestureDetector(
-                      onTap: (){},
+                      onTap: (){
+                        Navigator.pushNamed(context, "/muzaqi");
+                      },
                       child: Container(
                         width: 150,
                         height: 150,
@@ -118,7 +127,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                             SizedBox(height: 10,),
                             Text(
-                              "ZAKATPEDIA",
+                              "MUZAQI",
                               style: TextStyle(
                                   color: Colors.black,
                                   fontFamily: 'montserrat',
@@ -131,7 +140,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                     SizedBox(width: 20,),
                     GestureDetector(
-                      onTap: (){},
+                      onTap: (){
+                        Navigator.pushNamed(context, "/zakatmaal");
+                      },
                       child: Container(
                         width: 150,
                         height: 150,
@@ -144,13 +155,13 @@ class _HomePageState extends State<HomePage> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
                             Image(
-                              image: AssetImage("assets/img/logo.png"),
+                              image: AssetImage("assets/img/money.png"),
                               width: 100,
                               height: 100,
                             ),
                             SizedBox(height: 10,),
                             Text(
-                              "ZAKATPEDIA",
+                              "ZAKAT MAAL",
                               style: TextStyle(
                                   color: Colors.black,
                                   fontFamily: 'montserrat',
@@ -167,35 +178,24 @@ class _HomePageState extends State<HomePage> {
             )
           ],
         ),
-      ),
     );
   }
 }
 
-class GreenPainter extends CustomPainter{
+
+class MyClipper extends CustomClipper<Path>{
   @override
-  void paint(Canvas canvas, Size size){
-    final height = size.height;
-    final width = size.width;
-    Paint paint = Paint();
-
-    Path mainBackground = Path();
-    mainBackground.addRect(Rect.fromLTRB(0, 0, width, height));
-    paint.color = Colors.white;
-    canvas.drawPath(mainBackground, paint);
-
-    Path ovalPath = Path();
-    ovalPath.moveTo(0,height*0.3);
-    ovalPath.quadraticBezierTo(width*0.5, height*0.3, width *0.5, height*0.36);
-
-    paint.color = Color.fromRGBO(156, 241, 150, 1);
-    canvas.drawPath(ovalPath, paint);
-
+  Path getClip(Size size){
+    var path = Path();
+    path.lineTo(0, size.height-40);
+    path.quadraticBezierTo(size.width/4, size.height, size.width/2, size.height);
+    path.quadraticBezierTo(size.width - (size.width/4), size.height, size.width, size.height - 40);
+    path.lineTo(size.width, 0.0);
+    return path;
   }
 
   @override
-  bool shouldRepaint(CustomPainter oldDelegate){
-    return oldDelegate != this;
-  }
+  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }
+
 
