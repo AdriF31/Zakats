@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "274469977207",
+    "firebase_url": "https://zakat-d016b.firebaseio.com",
+    "project_id": "zakat-d016b",
+    "storage_bucket": "zakat-d016b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:274469977207:android:18b1b84a49b209e29b1a72",
+        "android_client_info": {
+          "package_name": "com.drydream.zakats"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "274469977207-dsm91il4gmsido9nk51m5s4icbsv68b2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.drydream.zakats",
+            "certificate_hash": "3360b5b6c58c31d7e9d10ea821c3e8b27f341d38"
+          }
+        },
+        {
+          "client_id": "274469977207-8rlsi064ki763u80shp2090puhjaavkq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgFH0i7UrUBkTjuOb0eMJR3y_fV1cAjqY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "274469977207-8rlsi064ki763u80shp2090puhjaavkq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
