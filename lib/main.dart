@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zakats/pages/home.dart';
-import 'package:zakats/pages/muzaqi.dart';
+import 'package:zakats/pages/mustahik.dart';
 import 'package:zakats/pages/splashscreen.dart';
 import 'package:zakats/pages/zakat_fitrah.dart';
 import 'package:zakats/pages/zakat_maal.dart';
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
           "/zakatpedia" : (BuildContext context) => Zakatpedia(),
           "/zakatfitrah" : (BuildContext context) => ZakatFitrah(),
           "/zakatmaal" : (BuildContext context) => ZakatMaal(),
-          "/muzaqi" : (BuildContext context) => Muzaqi(),
+          "/mustahik" : (BuildContext context) => Mustahik(),
 
         },
         theme: ThemeData(
