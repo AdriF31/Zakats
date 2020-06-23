@@ -1,53 +1,74 @@
 import 'package:flutter/material.dart';
 
-class Muzaqi extends StatefulWidget {
+class Mustahik extends StatefulWidget {
   @override
-  _MuzaqiState createState() => _MuzaqiState();
+  _MustahikState createState() => _MustahikState();
 }
 
-class _MuzaqiState extends State<Muzaqi> {
+class _MustahikState extends State<Mustahik> {
   var _index = 0;
   Widget _builderStep() => Container(
     margin: EdgeInsets.only(top: 10),
     color: Colors.white,
     child: Stepper(
-      steps: [
-        Step(
-          title: Text("Miqat"),
-          content: Text(
-              'Miqat adalah tempat memakai ihram dan tempat berniat umroh. Bisa diartikan sebagai tempat start kegiatan ibadah umroh. Miqat bisa dilakukan di Madinah yaitu Masjid Bir Ali atau di Makkah dan Jeddah mulai dari Bandara Internasional King Abdul Aziz. Saat miqat, pria harus sudah memakai pakaian khusus untuk umroh dan haji yang bernama ihram. Pria sudah tidak boleh memakai alas kaki yang menutup mata kaki, tidak memakai pakaian yang dijahit dan tanpa penutup kepala. Wanita sudah harus menutup aurat dan hanya boleh menampakkan telapak tangan dan wajah. Kemudian, berniat mengerjakan ibadah umroh dengan membaca bacaan niat umroh berikut: "Labbaikallahumma'+"'"+'umratan".'),
 
+      steps: const<Step>[
+        Step(
+          title: Text("Fakir",style: TextStyle(fontFamily: 'montserrat', fontSize: 17),),
+          content: Text(
+              'Orang yang tidak mempunyai harta dan usaha untuk mencukupi kebutuhan hidupnya sehari-hari.',
+              style: TextStyle(fontFamily: 'montserrat', fontSize: 17),textAlign:TextAlign.justify
+          ),
         ),
         Step(
-          title: Text("Menuju Masjidil Haram di Mekah"),
+          title: Text("Miskin",style: TextStyle(fontFamily: 'montserrat', fontSize: 17),),
           content: Text(
-              "Dalam perjalanan, memperbanyak bacaan kalimat talbiyah yang selalu diucapkan Rasulullah shallallahu ‘alaihi wa sallam ketika umroh dan haji."+'"Labbaik Allahumma Labbaik. Labbaik Laa Syarika Laka Labbaik. Innal Hamda Wan Nimata Laka Wal Mulk Laa Syarika Lak"'),
+            'Orang yang tidak cukup penghidupannya dan dalam keadaan serbakekurangan.',
+            style: TextStyle(fontFamily: 'montserrat', fontSize: 17),textAlign:TextAlign.justify
+          ),
         ),
         Step(
-          title: Text("Melakukan Thawaf"),
+          title: Text("Amil",style: TextStyle(fontFamily: 'montserrat', fontSize: 17),),
           content: Text(
-              "Sebelum masuk Masjidil Haram, jamaah dianjurkan berwudhu terlebih dahulu. Jamaah boleh masuk Masjidil Haram lewat pintu mana saja, tapi dianjurkan mengikuti contoh Rasulullah SAW yang masuk melalui pintu Babus Salam atau Bani Syaibah. Setelah itu turun dan terus menuju tempat thawaf (mataf). Jamaah mulai thawaf dari garis lurus (area dekat Hajar Aswad) antara pintu Kabah dan tanda lampu hijau di lantai atas Masjidil Haram."),
+            'Orang yang mengurusi proses terselenggaranya zakat(pengurus zakat.',
+            style: TextStyle(fontFamily: 'montserrat', fontSize: 17),textAlign:TextAlign.justify
+          ),
         ),
         Step(
-          title: Text("Sholat 2 rakaat di depan Maqom Ibrahim"),
+          title: Text("Mualaf",style: TextStyle(fontFamily: 'montserrat', fontSize: 17),),
           content: Text(
-              "Maqom Ibrahim bukanlah kuburan dan tidak pula tempat yang terkait dengan kuburan lain. Namun di tempat itu Nabi Ibrahim pernah berdiri dalam rangka membangun Kabah. Rakaat pertama membaca surat Al-Fatihah dilanjutkan dengan membaca surat Al-Kaafiruun. Rakaat kedua membaca surat Al-Fatihah dilanjutkan dengan membaca surat Al-Ikhlas."),
+            'orang yang ada harapan untuk masuk Islam atau orang yang baru masuk Islam yang kemungkinan imannya masih lemah. Mereka ini juga termasuk yang berhak menerima zakat.',
+            style: TextStyle(fontFamily: 'montserrat', fontSize: 17),textAlign:TextAlign.justify
+          ),
         ),
         Step(
-          title: Text("Beristirahat sejenak dan minum air zam-zam"),
+          title: Text("Riqab",style: TextStyle(fontFamily: 'montserrat', fontSize: 17),),
           content: Text(
-              "Sebelum minum air zam-zam, membaca doa ALLAHUMMA INNI ASALUKA ILMAN NAFI AN WA RISQON WAASIAN WA SYIFAAAN MIN KULLI DAAIN WA SAQOMIN BI ROMHATIKA YA ARHAMAR ROHIMIIN"),
+            'Riqab adalah memerdekakan budak.   Orang yang menjadi budak dapat menggunakan bantuan zakat untuk memerdekakan diri. Saat ini perbudakan sudah dilarang sehingga tidak ada lagi budak.',
+            style: TextStyle(fontFamily: 'montserrat', fontSize: 17),textAlign:TextAlign.justify
+          ),
         ),
         Step(
-          title: Text("Melakukan Sai"),
+          title: Text("Gharim",style: TextStyle(fontFamily: 'montserrat', fontSize: 17),),
           content: Text(
-              "Sai dimulai dari Safa ke Marwah yang dihitung sebagai satu kali perjalanan. Jadi, Safa ke Marwah 1, Marwah ke Safa 2, dan seterusnya. Sai berakhir di Marwah. Sai dikerjakan dengan berjalan, tapi pada batas di antara 2 lampu hijau, berlari-lari kecil. Sai ini merupakan penghargaan Allah SWT kepada istri Nabi Ibrahim. Saat itu istri Nabi Ibrahim, Siti Hajar, bolak-balik antara Safa dan Marwah sebanyak 7 kali dalam rangka mencari  air untuk minum putra beliau yaitu Nabi Ismail."),
+            'Gharimin diartikan sebagai orang yang terlilit hutang. Salah satu golongan penerima zakat ini dikategorikan sebagai penerima zakat yang wajib kita berikan yang terbagi menjadi 2 jenis, yaitu:Ghârim limaslahati nafsihi (Terlilit hutang demi kemaslahatan atau kebutuhan dirinya) dan Ghârim li ishlâhi dzatil bain ( Terlilit hutang karena mendamaikan manusia, qabilah atau suku)',
+            style: TextStyle(fontFamily: 'montserrat', fontSize: 17),textAlign:TextAlign.justify
+          ),
         ),
         Step(
-          title: Text(" Melakukan Tahallul"),
+          title: Text("fisabilillah",style: TextStyle(fontFamily: 'montserrat', fontSize: 17),),
           content: Text(
-              "Tahallul adalah akhir dari pelaksanaan ibadah umroh yang ditandai dengan bercukur. Untuk laki-laki lebih baik dicukur sampai gundul, tapi jika tidak sampai gundul tak mengapa. Sedangkan untuk tata cara umroh wanita hanya dicukur ala kadarnya."),
+            'orang yang berjuang untuk kepentingan Islam dan para muslimin. Dalam hal ini, pada masa modern, sabilillah tidak dapat dimaknai hanya semata-mata sebagai orang yang berperang secara fisik, tetapi juga mereka yang mengerjakan kebajikan untuk kemaslahatan umat',
+            style: TextStyle(fontFamily: 'montserrat', fontSize: 17),textAlign:TextAlign.justify
+          ),
         ),
+        Step(
+          title: Text("Ibnu Sabil",style: TextStyle(fontFamily: 'montserrat', fontSize: 17),),
+          content: Text('orang yang sedang dalam perjalanan dan bukan yang menderita dalam perjalanan dengan tujuan bermaksiat.',
+            style: TextStyle(fontFamily: 'montserrat', fontSize: 17),
+          ),
+        ),
+
 
       ],
       currentStep: _index,
@@ -66,7 +87,7 @@ class _MuzaqiState extends State<Muzaqi> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("MUZAQI", style: TextStyle(fontFamily: 'montserrat', fontWeight: FontWeight.bold),),
+        title: Text("MUSTAHIK", style: TextStyle(fontFamily: 'montserrat', fontWeight: FontWeight.bold),),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
