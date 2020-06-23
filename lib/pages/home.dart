@@ -1,14 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:intl/intl.dart';
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+
+  DateTime _currentDate = new DateTime.now();
+
   @override
   Widget build(BuildContext context) {
+    String _formattodate = new DateFormat.yMMMMEEEEd().format(_currentDate);
+    String _formattotime = new DateFormat.jm().format(_currentDate);
     return Scaffold(
       body: ListView(
           children: <Widget>[
@@ -18,9 +23,30 @@ class _HomePageState extends State<HomePage> {
                   clipper: MyClipper(),
                   child: Container(
                     height: 300,
+                    width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
                       color: Color.fromRGBO(156, 241, 150, 1)
                     ),
+                   child: Padding(
+                     padding: const EdgeInsets.all(15.0),
+                     child: Column(
+                       mainAxisAlignment: MainAxisAlignment.center,
+                       children: <Widget>[
+                         Row(
+                           crossAxisAlignment: CrossAxisAlignment.start,
+                           children: <Widget>[
+                             Text('$_formattodate',style: TextStyle(fontFamily: 'montserrat', fontWeight: FontWeight.bold, color: Colors.black, fontSize: 30),),
+                           ],
+                         ),
+                         Row(
+                           crossAxisAlignment: CrossAxisAlignment.start,
+                           children: <Widget>[
+                             Text('$_formattotime',style: TextStyle(fontFamily: 'montserrat', fontWeight: FontWeight.bold, color: Colors.black, fontSize: 30),),
+                           ],
+                         ),
+                       ],
+                     ),
+                   ),
 
                   ),
                 )
@@ -107,7 +133,7 @@ class _HomePageState extends State<HomePage> {
                   children: <Widget>[
                     GestureDetector(
                       onTap: (){
-                        Navigator.pushNamed(context, "/muzaqi");
+                        Navigator.pushNamed(context, "/mustahik");
                       },
                       child: Container(
                         width: 150,
@@ -127,7 +153,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                             SizedBox(height: 10,),
                             Text(
-                              "MUZAQI",
+                              "MUSTAHIK",
                               style: TextStyle(
                                   color: Colors.black,
                                   fontFamily: 'montserrat',
