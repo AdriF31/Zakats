@@ -5,6 +5,7 @@ import 'package:zakats/pages/splashscreen.dart';
 import 'package:zakats/pages/zakat_fitrah.dart';
 import 'package:zakats/pages/zakat_maal.dart';
 import 'package:zakats/pages/zakatpedia.dart';
+import 'package:zakats/pages/zakat_emas_perak.dart';
 
 
 void main() {
@@ -24,14 +25,12 @@ class MyApp extends StatelessWidget {
           "/zakatfitrah" : (BuildContext context) => ZakatFitrah(),
           "/zakatmaal" : (BuildContext context) => ZakatMaal(),
           "/mustahik" : (BuildContext context) => Mustahik(),
+          "/emasperak" : (BuildContext context) => HitungEmasPerak(),
 
         },
         theme: ThemeData(
           primaryColor: Color(0xFF56A74D),
-          primaryColorLight: Colors.amber[400],
-          primaryIconTheme:
-          Theme.of(context).primaryIconTheme.copyWith(color: Colors.white),
-          primaryTextTheme: TextTheme(title: TextStyle(color: Colors.white)),
+
         ),
       );
   }

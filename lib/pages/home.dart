@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 class HomePage extends StatefulWidget {
@@ -7,13 +8,22 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
+  String _currentTime;
   DateTime _currentDate = new DateTime.now();
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    _currentTime = _formatDateTime(DateTime.now());
+    Timer.periodic(Duration(seconds: 1), (Timer t) => _getTime());
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    String _formattodate = new DateFormat.yMMMMEEEEd().format(_currentDate);
-    String _formattotime = new DateFormat.jm().format(_currentDate);
+    String _formattedDate = new DateFormat.yMMMMEEEEd().format(_currentDate);
+    /*String _formattotime = new DateFormat.jm().format(_currentDate);*/
     return Scaffold(
       body: ListView(
           children: <Widget>[
@@ -35,15 +45,16 @@ class _HomePageState extends State<HomePage> {
                          Row(
                            crossAxisAlignment: CrossAxisAlignment.start,
                            children: <Widget>[
-                             Text('$_formattodate',style: TextStyle(fontFamily: 'montserrat', fontWeight: FontWeight.bold, color: Colors.black, fontSize: 30),),
+                             Text('$_formattedDate',style: TextStyle(fontFamily: 'montserrat', fontWeight: FontWeight.bold, color: Colors.black, fontSize: 30),),
                            ],
                          ),
                          Row(
                            crossAxisAlignment: CrossAxisAlignment.start,
                            children: <Widget>[
-                             Text('$_formattotime',style: TextStyle(fontFamily: 'montserrat', fontWeight: FontWeight.bold, color: Colors.black, fontSize: 30),),
+                             Text('$_currentTime',style: TextStyle(fontFamily: 'montserrat', fontWeight: FontWeight.bold, color: Colors.black, fontSize: 30),),
                            ],
                          ),
+
                        ],
                      ),
                    ),
@@ -206,7 +217,22 @@ class _HomePageState extends State<HomePage> {
         ),
     );
   }
+  //ini buat ngambil waktu yang udah diubah :)
+  void _getTime(){
+    final DateTime now = DateTime.now();
+    final String formattedDateTime = _formatDateTime(now);
+    setState((){
+      _currentTime = formattedDateTime;
+    });
+  }
+
+  //ini buat ngubah format waktunya yaa
+  String _formatDateTime(DateTime dateTime){
+    return DateFormat('HH:mm').format(dateTime);
+  }
 }
+
+
 
 
 class MyClipper extends CustomClipper<Path>{
