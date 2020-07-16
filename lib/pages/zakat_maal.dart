@@ -37,7 +37,7 @@ class _ZakatMaalState extends State<ZakatMaal> with SingleTickerProviderStateMix
       body: TabBarView(
         controller: controller,
         children: <Widget>[
-          ZakatInfo(),
+          ZakatMaalInfo(),
           ZakatJenis(),
         ],
       ),

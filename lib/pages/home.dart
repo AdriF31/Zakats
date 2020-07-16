@@ -25,196 +25,199 @@ class _HomePageState extends State<HomePage> {
     String _formattedDate = new DateFormat.yMMMMEEEEd().format(_currentDate);
     /*String _formattotime = new DateFormat.jm().format(_currentDate);*/
     return Scaffold(
-      body: ListView(
-          children: <Widget>[
-            Column(
-              children: <Widget>[
-                ClipPath(
-                  clipper: MyClipper(),
-                  child: Container(
-                    height: 300,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                      color: Color.fromRGBO(156, 241, 150, 1)
-                    ),
-                   child: Padding(
-                     padding: const EdgeInsets.all(15.0),
-                     child: Column(
-                       mainAxisAlignment: MainAxisAlignment.center,
-                       children: <Widget>[
-                         Row(
-                           crossAxisAlignment: CrossAxisAlignment.start,
-                           children: <Widget>[
-                             Text('$_formattedDate',style: TextStyle(fontFamily: 'montserrat', fontWeight: FontWeight.bold, color: Colors.black, fontSize: 30),),
-                           ],
-                         ),
-                         Row(
-                           crossAxisAlignment: CrossAxisAlignment.start,
-                           children: <Widget>[
-                             Text('$_currentTime',style: TextStyle(fontFamily: 'montserrat', fontWeight: FontWeight.bold, color: Colors.black, fontSize: 30),),
-                           ],
-                         ),
+      body: Padding(
+        padding: const EdgeInsets.only(bottom: 10),
+        child: ListView(
+            children: <Widget>[
+              Column(
+                children: <Widget>[
+                  ClipPath(
+                    clipper: MyClipper(),
+                    child: Container(
+                      height: 300,
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(156, 241, 150, 1)
+                      ),
+                     child: Padding(
+                       padding: const EdgeInsets.all(15.0),
+                       child: Column(
+                         mainAxisAlignment: MainAxisAlignment.center,
+                         children: <Widget>[
+                           Row(
+                             crossAxisAlignment: CrossAxisAlignment.start,
+                             children: <Widget>[
+                               Text('$_formattedDate',style: TextStyle(fontFamily: 'montserrat', fontWeight: FontWeight.bold, color: Colors.black, fontSize: MediaQuery.of(context).size.width*0.07),),
+                             ],
+                           ),
+                           Row(
+                             crossAxisAlignment: CrossAxisAlignment.start,
+                             children: <Widget>[
+                               Text('$_currentTime',style: TextStyle(fontFamily: 'montserrat', fontWeight: FontWeight.bold, color: Colors.black, fontSize: MediaQuery.of(context).size.width*0.08),),
+                             ],
+                           ),
 
-                       ],
+                         ],
+                       ),
                      ),
-                   ),
 
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(height: 20,),
+              Column(
+                children: <Widget>[
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.pushNamed(context, "/zakatpedia");
+                        },
+                        child: Container(
+                          width: 150,
+                          height: 150,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Color.fromRGBO(179, 221, 165, 1),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Image(
+                                image: AssetImage("assets/img/logo.png"),
+                                width: 100,
+                                height: 100,
+                              ),
+                              SizedBox(height: 10,),
+                              Text(
+                                "ZAKATPEDIA",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: 'montserrat',
+                                  fontWeight: FontWeight.bold
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 20,),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.pushNamed(context, "/zakatfitrah");
+                        },
+                        child: Container(
+                          width: 150,
+                          height: 150,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Color.fromRGBO(179, 221, 165, 1),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Image(
+                                image: AssetImage("assets/img/zakatfitrah.png"),
+                                width: 100,
+                                height: 100,
+                              ),
+                              SizedBox(height: 10,),
+                              Text(
+                                "ZAKAT FITRAH",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: 'montserrat',
+                                    fontWeight: FontWeight.bold
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                )
-              ],
-            ),
-            SizedBox(height: 20,),
-            Column(
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    GestureDetector(
-                      onTap: (){
-                        Navigator.pushNamed(context, "/zakatpedia");
-                      },
-                      child: Container(
-                        width: 150,
-                        height: 150,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Color.fromRGBO(179, 221, 165, 1),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Image(
-                              image: AssetImage("assets/img/logo.png"),
-                              width: 100,
-                              height: 100,
-                            ),
-                            SizedBox(height: 10,),
-                            Text(
-                              "ZAKATPEDIA",
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: 'montserrat',
-                                fontWeight: FontWeight.bold
+                  SizedBox(height: 20,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.pushNamed(context, "/mustahik");
+                        },
+                        child: Container(
+                          width: 150,
+                          height: 150,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Color.fromRGBO(179, 221, 165, 1),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Image(
+                                image: AssetImage("assets/img/muslim.png"),
+                                width: 100,
+                                height: 100,
                               ),
-                            )
-                          ],
+                              SizedBox(height: 10,),
+                              Text(
+                                "MUSTAHIK",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: 'montserrat',
+                                    fontWeight: FontWeight.bold
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(width: 20,),
-                    GestureDetector(
-                      onTap: (){
-                        Navigator.pushNamed(context, "/zakatfitrah");
-                      },
-                      child: Container(
-                        width: 150,
-                        height: 150,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Color.fromRGBO(179, 221, 165, 1),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Image(
-                              image: AssetImage("assets/img/zakatfitrah.png"),
-                              width: 100,
-                              height: 100,
-                            ),
-                            SizedBox(height: 10,),
-                            Text(
-                              "ZAKAT FITRAH",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontFamily: 'montserrat',
-                                  fontWeight: FontWeight.bold
+                      SizedBox(width: 20,),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.pushNamed(context, "/zakatmaal");
+                        },
+                        child: Container(
+                          width: 150,
+                          height: 150,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Color.fromRGBO(179, 221, 165, 1),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Image(
+                                image: AssetImage("assets/img/money.png"),
+                                width: 100,
+                                height: 100,
                               ),
-                            )
-                          ],
+                              SizedBox(height: 10,),
+                              Text(
+                                "ZAKAT MAAL",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: 'montserrat',
+                                    fontWeight: FontWeight.bold
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 20,),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    GestureDetector(
-                      onTap: (){
-                        Navigator.pushNamed(context, "/mustahik");
-                      },
-                      child: Container(
-                        width: 150,
-                        height: 150,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Color.fromRGBO(179, 221, 165, 1),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Image(
-                              image: AssetImage("assets/img/muslim.png"),
-                              width: 100,
-                              height: 100,
-                            ),
-                            SizedBox(height: 10,),
-                            Text(
-                              "MUSTAHIK",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontFamily: 'montserrat',
-                                  fontWeight: FontWeight.bold
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 20,),
-                    GestureDetector(
-                      onTap: (){
-                        Navigator.pushNamed(context, "/zakatmaal");
-                      },
-                      child: Container(
-                        width: 150,
-                        height: 150,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Color.fromRGBO(179, 221, 165, 1),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Image(
-                              image: AssetImage("assets/img/money.png"),
-                              width: 100,
-                              height: 100,
-                            ),
-                            SizedBox(height: 10,),
-                            Text(
-                              "ZAKAT MAAL",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontFamily: 'montserrat',
-                                  fontWeight: FontWeight.bold
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            )
-          ],
-        ),
+                    ],
+                  )
+                ],
+              )
+            ],
+          ),
+      ),
     );
   }
   //ini buat ngambil waktu yang udah diubah :)

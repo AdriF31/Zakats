@@ -24,7 +24,7 @@ class _HitungEmasPerakState extends State<HitungEmasPerak> with SingleTickerProv
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("ZAKAT MAAL", style: TextStyle(fontFamily: 'montserrat', fontWeight: FontWeight.bold),),
+        title: Text("ZAKAT EMAS DAN PERAK", style: TextStyle(fontFamily: 'montserrat', fontWeight: FontWeight.bold),),
         centerTitle: true,
         bottom: TabBar(
           controller: controller,
