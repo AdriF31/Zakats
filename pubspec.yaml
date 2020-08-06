@@ -31,15 +31,18 @@ dependencies:
   shimmer: ^1.0.1
   flutter_spinkit: ^4.1.2+1
   dropdownfield: ^1.0.3
+  draggable_fab: ^0.1.1
+  simplehttpconnection: ^1.3.0
+
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 flutter_icons:
-   android: "launcher_icon"
-   ios: true
-   image_path: "assets/img/logo.png"
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/img/logo.png"
 
 
 # For information on the generic Dart part of this file, see the
@@ -94,5 +97,11 @@ flutter:
         - asset: assets/fonts/Montserrat-Bold.ttf
         - asset: assets/fonts/Montserrat-Medium.ttf
         - asset: assets/fonts/Montserrat-SemiBold.ttf
+    - family:  Logo
+      fonts:
+        - asset: assets/fonts/logo.ttf
+    - family: IconApp
+      fonts:
+        - asset: assets/fonts/IconApp.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

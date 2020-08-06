@@ -1,14 +1,17 @@
 import 'package:flutter/cupertino.dart';
-import 'dart:async';
+/*import 'dart:async';
+import 'package:intl/intl.dart';*/
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'package:draggable_fab/draggable_fab.dart';
+import 'package:zakats/utils/icon_app_icons.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  String _currentTime;
+  /*String _currentTime;
   DateTime _currentDate = new DateTime.now();
 
 
@@ -18,12 +21,12 @@ class _HomePageState extends State<HomePage> {
     _currentTime = _formatDateTime(DateTime.now());
     Timer.periodic(Duration(seconds: 1), (Timer t) => _getTime());
     super.initState();
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
-    String _formattedDate = new DateFormat.yMMMMEEEEd().format(_currentDate);
-    /*String _formattotime = new DateFormat.jm().format(_currentDate);*/
+    /*String _formattedDate = new DateFormat.yMMMMEEEEd().format(_currentDate);
+      String _formattotime = new DateFormat.jm().format(_currentDate);*/
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(bottom: 10),
@@ -37,9 +40,14 @@ class _HomePageState extends State<HomePage> {
                       height: 300,
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
-                        color: Color.fromRGBO(156, 241, 150, 1)
+                        color: Color.fromRGBO(156, 241, 150, 1),
                       ),
-                     child: Padding(
+                     child: Image(
+                       image: AssetImage("assets/img/zakat2.png"),
+                       fit: BoxFit.fill,
+                     )
+
+                      /*Padding(
                        padding: const EdgeInsets.all(15.0),
                        child: Column(
                          mainAxisAlignment: MainAxisAlignment.center,
@@ -59,7 +67,7 @@ class _HomePageState extends State<HomePage> {
 
                          ],
                        ),
-                     ),
+                     ),*/
 
                     ),
                   )
@@ -218,10 +226,24 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButton: DraggableFab(
+        child: Container(
+          width: 80,
+          height: 80,
+          child: FloatingActionButton(
+            backgroundColor: Color.fromRGBO(179, 221, 165, 1),
+            onPressed: (){
+              Navigator.pushNamed(context, "/jadwalsholat");
+            },
+            child: Icon(IconApp.muslim,size: 60,color: Colors.black,),
+          ),
+        ),
+      ),
     );
   }
   //ini buat ngambil waktu yang udah diubah :)
-  void _getTime(){
+ /*void _getTime(){
     final DateTime now = DateTime.now();
     final String formattedDateTime = _formatDateTime(now);
     setState((){
@@ -232,7 +254,7 @@ class _HomePageState extends State<HomePage> {
   //ini buat ngubah format waktunya yaa
   String _formatDateTime(DateTime dateTime){
     return DateFormat('HH:mm').format(dateTime);
-  }
+  }*/
 }
 
 
