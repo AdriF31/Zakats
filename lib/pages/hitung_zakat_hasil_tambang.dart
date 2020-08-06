@@ -9,7 +9,7 @@ class HitungZakatHasilTambang extends StatefulWidget {
 
 class _HitungZakatHasilTambangState extends State<HitungZakatHasilTambang> {
 
-  List<String> Tambang = [
+  List<String> tambang = [
     "Emas",
     "Perak",
     "Batuan",
@@ -52,7 +52,7 @@ class _HitungZakatHasilTambangState extends State<HitungZakatHasilTambang> {
                     labelStyle: TextStyle(fontFamily: 'montserrat', fontSize: 20),
                     controller: controllerTambang,
                     itemsVisibleInDropdown: 5,
-                    items: Tambang ,
+                    items: tambang ,
                     enabled: true,
                     onValueChanged: (value){
                       setState(() {

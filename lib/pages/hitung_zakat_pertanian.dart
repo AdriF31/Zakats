@@ -9,7 +9,7 @@ class HitungZakatPertanian extends StatefulWidget {
 
 class _HitungZakatPertanianState extends State<HitungZakatPertanian> {
 
-  List<String> Pengairan = [
+  List<String> pengairan = [
     "Air Hujan",
     "Irigasi",
   ];
@@ -47,7 +47,7 @@ class _HitungZakatPertanianState extends State<HitungZakatPertanian> {
                     labelText: "Pengairan",
                     labelStyle: TextStyle(fontFamily: 'montserrat', fontSize: 20),
                     controller: controllerPengairan,
-                    items: Pengairan,
+                    items: pengairan,
                     enabled: true,
                     onValueChanged: (value){
                       setState(() {

@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:dropdownfield/dropdownfield.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -11,7 +9,7 @@ class HitungZakatHewanTernak extends StatefulWidget {
 
 class _HitungZakatHewanTernakState extends State<HitungZakatHewanTernak> {
 
-  List<String> Hewan = [
+  List<String> jenisHewan = [
     "Kambing",
     "Domba",
     "Sapi",
@@ -56,7 +54,7 @@ class _HitungZakatHewanTernakState extends State<HitungZakatHewanTernak> {
                     labelStyle: TextStyle(fontFamily: 'montserrat', fontSize: 20),
                     controller: controllerHewan,
                     itemsVisibleInDropdown: 5,
-                    items: Hewan ,
+                    items: jenisHewan ,
                     enabled: true,
                     onValueChanged: (value){
                       setState(() {
