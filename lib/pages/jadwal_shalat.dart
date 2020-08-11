@@ -1,7 +1,3 @@
-//===============================================================================
-//Created by Mochamad Nizwar Syafuan
-//email : nizwar@merahputih.id
-//===============================================================================
 
 import 'dart:ui';
 import 'package:flutter/material.dart';
