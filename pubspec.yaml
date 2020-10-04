@@ -33,6 +33,8 @@ dependencies:
   dropdownfield: ^1.0.3
   draggable_fab: ^0.1.1
   simplehttpconnection: ^1.3.0
+  webview_flutter: ^0.3.22+1
+  datetime_picker_formfield: ^1.0.0
 
 
 

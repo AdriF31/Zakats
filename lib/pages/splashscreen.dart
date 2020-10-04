@@ -14,7 +14,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   void initState() {
     super.initState();
     Timer(Duration(seconds: 5),
-            () => Navigator.of(context).pushReplacementNamed('/home'));
+            () => Navigator.of(context).pushReplacementNamed('/navbar'));
   }
 
   @override

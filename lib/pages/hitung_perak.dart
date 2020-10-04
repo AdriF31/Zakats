@@ -26,6 +26,26 @@ class _HitungPerakState extends State<HitungPerak> {
         child: Container(
           child: Column(
             children: <Widget>[
+              Container(
+                padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                        color: Colors.green
+                    )
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text("Harga perak adalah Rp 12.000,00/gram\nnisab untuk zakat perak adalah 595 gram\nzakat yang dikeluarkan sebesar 2,5%",
+                      style: TextStyle(
+                          fontSize: 15, fontFamily: "montserrat"
+                      ),),
+                  ],
+                ),
+              ),
+              SizedBox(height: 20,),
               TextFormField(
                 decoration: InputDecoration(
                   labelText: "Jumlah Perak (gram)",
@@ -77,8 +97,8 @@ class _HitungPerakState extends State<HitungPerak> {
                       borderRadius: BorderRadius.circular(10)
                   ),
                   child:
-                  nishab<85? Text("Harta anda belum memenuhi nisab zakat emas, anda tidak wajib mengeluarkan zakat",style: TextStyle(fontFamily: 'montserrat',fontSize: 15,color: Colors.white),textAlign: TextAlign.justify,)
-                      : Text('Anda sudah memenuhi nisab zakat emas, zakat yang harus anda keluarkan sebesar $zakat',style: TextStyle(fontFamily: 'montserrat',fontSize: 15,color: Colors.white),textAlign: TextAlign.justify,)
+                  nishab<595? Text("Harta anda belum memenuhi nisab zakat perak, anda tidak wajib mengeluarkan zakat",style: TextStyle(fontFamily: 'montserrat',fontSize: 15,color: Colors.white),textAlign: TextAlign.justify,)
+                      : Text('Anda sudah memenuhi nisab zakat perak, zakat yang harus anda keluarkan sebesar $zakat',style: TextStyle(fontFamily: 'montserrat',fontSize: 15,color: Colors.white),textAlign: TextAlign.justify,)
 
               )
             ],

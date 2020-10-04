@@ -261,11 +261,6 @@ class JadwalShalatState extends State<JadwalShalat> {
     initPosition();
   }
 
-  //===============================================================================
-  //Created by Mochamad Nizwar Syafuan
-  //email : nizwar@merahputih.id
-  //===============================================================================
-
   //Disini bagian backend =========================================================
   void reset() {
     setState(() {

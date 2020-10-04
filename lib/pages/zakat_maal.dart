@@ -29,8 +29,8 @@ class _ZakatMaalState extends State<ZakatMaal> with SingleTickerProviderStateMix
         bottom: TabBar(
           controller: controller,
           tabs: <Widget>[
-            Tab(icon: Icon(Icons.info),),
-            Tab(icon: Icon(Icons.menu),),
+            Tab(icon: Icon(Icons.info),text: 'Zalat Maal',),
+            Tab(icon: Icon(Icons.menu),text: 'Jenis Zakat Maal',),
           ],
         ),
       ),

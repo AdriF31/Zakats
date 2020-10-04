@@ -27,6 +27,26 @@ class _HitungZakatHartaTemuanState extends State<HitungZakatHartaTemuan> {
           child: Container(
             child: Column(
               children: <Widget>[
+                Container(
+                  padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(
+                          color: Colors.green
+                      )
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text("nisab zakat harta temuan adalah 1/4 dari harta tersebut",
+                        style: TextStyle(
+                            fontSize: 15, fontFamily: "montserrat"
+                        ),),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 20,),
                 TextFormField(
                   decoration: InputDecoration(
                     labelText: "Jumlah Harta Temuan (IDR)",

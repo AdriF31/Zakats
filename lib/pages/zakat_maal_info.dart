@@ -21,10 +21,28 @@ class _ZakatMaalInfoState extends State<ZakatMaalInfo> {
               ),
             );
           }else{
-            return Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Text(snapshot.data.documents[0].data["content"].replaceAll("\\n", "\n"),textAlign: TextAlign.justify,
-                style: TextStyle(fontFamily: 'montserrat',fontSize: 17),),
+            return ListView(
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    Container(
+                        width: MediaQuery.of(context).size.width,
+
+                        child: Image.network(snapshot.data.documents[0].data["img"], width:MediaQuery.of(context).size.width ,height: MediaQuery.of(context).size.height*0.3,fit: BoxFit.fill,)
+                    )
+                  ],
+                ),
+                Row(
+                  children: <Widget>[
+                    Container(
+                        padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                        width: MediaQuery.of(context).size.width,
+
+                        child: Text(snapshot.data.documents[0].data["content"].replaceAll("\\n", "\n"), textAlign: TextAlign.justify,
+                          style: TextStyle(fontFamily: 'montserrat',fontSize: 17),))
+                  ],
+                ),
+              ],
             );
           }
         },

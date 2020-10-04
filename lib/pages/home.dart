@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 /*import 'dart:async';
 import 'package:intl/intl.dart';*/
 import 'package:flutter/material.dart';
-import 'package:draggable_fab/draggable_fab.dart';
-import 'package:zakats/utils/icon_app_icons.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -220,26 +218,71 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ],
+                  ),
+                  SizedBox(height: 20,),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(10,10,10,10),
+                    child: Column(
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Text('Bayar Zakatmu Disini', style: TextStyle(fontSize: 16, fontFamily: 'montserrat', fontWeight: FontWeight.bold
+                            ),),
+                          ],
+                        ),
+                        Container(
+                          height: 200,
+                          child: ListView(
+                            scrollDirection: Axis.horizontal,
+                            children: <Widget>[
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: <Widget>[
+                                  GestureDetector(
+                                    onTap:(){
+                                      Navigator.pushNamed(context, "/baznas");
+                                      },
+                                    child: BayarZakat(
+                                      img: 'assets/img/baznas.png',
+                                      teks: "BAZNAS",
+                                    ),
+                                  ),
+                                  GestureDetector(
+                                    onTap:(){
+                                      Navigator.pushNamed(context, "/rumahzakat");
+                                    },
+                                    child: BayarZakat(
+                                      img: 'assets/img/rumahzakat.png',
+                                      teks: "RUMAH ZAKAT",
+                                    )
+                                  ),
+                                  GestureDetector(
+                                    onTap:(){
+                                      Navigator.pushNamed(context, "/dompetdhuafa");
+                                    },
+                                    child: BayarZakat(
+                                      img: 'assets/img/dompetdhuafa.png',
+                                      teks: "DOMPET DHUAFA",
+                                    )
+                                  ),
+
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   )
+
                 ],
-              )
+              ),
+
             ],
           ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-      floatingActionButton: DraggableFab(
-        child: Container(
-          width: 80,
-          height: 80,
-          child: FloatingActionButton(
-            backgroundColor: Color.fromRGBO(179, 221, 165, 1),
-            onPressed: (){
-              Navigator.pushNamed(context, "/jadwalsholat");
-            },
-            child: Icon(IconApp.muslim,size: 60,color: Colors.black,),
-          ),
-        ),
-      ),
+
     );
   }
   //ini buat ngambil waktu yang udah diubah :)
@@ -275,4 +318,37 @@ class MyClipper extends CustomClipper<Path>{
   bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }
 
+
+class BayarZakat extends StatelessWidget {
+  BayarZakat({this.img, this.teks});
+  final String img;
+  final String teks;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        margin: EdgeInsets.only(right: 10),
+        width: MediaQuery.of(context).size.width*0.7,
+        height: 150,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10)
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(10),
+          child: Stack(
+            alignment: AlignmentDirectional.bottomStart,
+            children: <Widget>[
+              Image.asset(img,fit: BoxFit.fill,),
+              Container(
+                width: MediaQuery.of(context).size.width*0.7,
+                height: 30,
+                color: Colors.green,
+                child: Text(teks, style: TextStyle(color: Colors.white,fontSize: 18, fontFamily: 'montserrat', fontWeight: FontWeight.bold,
+                ),textAlign: TextAlign.center,),
+              )
+            ],
+          ),
+        )
+    );
+  }
+}
 
