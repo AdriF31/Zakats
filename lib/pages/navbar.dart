@@ -30,7 +30,7 @@ class _NavigasiState extends State<Navigasi> {
         child: Icon(Icons.edit),
         backgroundColor: Colors.green,
         onPressed: (){
-          Navigator.pushNamed(context, "/catat");
+          showAlertDialog(context);
         },
       ),
 
@@ -68,4 +68,31 @@ class _NavigasiState extends State<Navigasi> {
       ),
     );
   }
+}
+showAlertDialog(BuildContext context) {
+
+  // set up the button
+  Widget okButton = FlatButton(
+    child: Text("OK"),
+    onPressed: () {
+      Navigator.of(context).pop();
+    },
+  );
+
+  // set up the AlertDialog
+  AlertDialog alert = AlertDialog(
+    title: Text("Fitur belum tersedia", style: TextStyle(fontFamily: 'montserrat', fontSize: 20, fontWeight: FontWeight.bold),),
+    content: Text("Tunggu Update selanjutnya :)", style: TextStyle(fontFamily: 'montserrat', fontSize: 16),),
+    actions: [
+      okButton,
+    ],
+  );
+
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
 }

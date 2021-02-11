@@ -46,7 +46,7 @@ class _HitungEmasState extends State<HitungEmas> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text("Harga emas adalah $emas /gram ($lastUpdate)\nnisab untuk zakat emas adalah 85 gram",
+                        Text("Harga emas adalah $emas /gram ($lastUpdate)\nnisab untuk zakat emas adalah 85 gram\nZakat yang dikeluarkan sebesar 2,5%",
                           style: TextStyle(
                               fontSize: 14, fontFamily: "montserrat"
                           ),),

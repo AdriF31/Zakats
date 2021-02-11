@@ -8,8 +8,6 @@ import 'package:simplehttpconnection/simplehttpconnection.dart';
 
 const String serverAPI = "http://api.aladhan.com/";
 
-
-
 class JadwalShalat extends StatefulWidget {
   @override
   JadwalShalatState createState() => JadwalShalatState();
