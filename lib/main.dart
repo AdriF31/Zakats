@@ -21,9 +21,8 @@ import 'package:zakats/pages/hitung_zakat_pertanian.dart';
 import 'package:zakats/pages/hitung_zakat_hewan_ternak.dart';
 import 'package:flutter/services.dart';
 
-
 void main() {
-  return runApp( MyApp ());
+  return runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -38,31 +37,28 @@ class MyApp extends StatelessWidget {
       title: 'Zakat',
       home: SplashScreenPage(),
       routes: <String, WidgetBuilder>{
-        "/home" : (BuildContext context) => HomePage(),
-        "/navbar" : (BuildContext context) => Navigasi(),
-        "/zakatpedia" : (BuildContext context) => Zakatpedia(),
-        "/zakatfitrah" : (BuildContext context) => ZakatFitrah(),
-        "/zakatmaal" : (BuildContext context) => ZakatMaal(),
-        "/mustahik" : (BuildContext context) => Mustahik(),
-        "/emasperak" : (BuildContext context) => HitungEmasPerak(),
-        "/perniagaan" : (BuildContext context) => HitungZakatPerniagaan(),
-        "/hartatemuan" : (BuildContext context) => HitungZakatHartaTemuan(),
-        "/profesi" : (BuildContext context) => HitungZakatProfesi(),
-        "/hasilpertanian" : (BuildContext context) => HitungZakatPertanian(),
-        "/hasiltambang" : (BuildContext context) => HitungZakatHasilTambang(),
-        "/hewanternak" : (BuildContext context) => HitungZakatHewanTernak(),
-        "/jadwalsholat" : (BuildContext context) => JadwalShalat(),
-        "/baznas" : (BuildContext context) => Baznas(),
-        "/rumahzakat" : (BuildContext context) => RumahZakat(),
-        "/dompetdhuafa" : (BuildContext context) => DompetDhuafa(),
-        "/catat" : (BuildContext context) => CatatZakat(),
-        "/add" : (BuildContext context) => TambahCatatan(),
-
-
+        "/home": (BuildContext context) => HomePage(),
+        "/navbar": (BuildContext context) => Navigasi(),
+        "/zakatpedia": (BuildContext context) => Zakatpedia(),
+        "/zakatfitrah": (BuildContext context) => ZakatFitrah(),
+        "/zakatmaal": (BuildContext context) => ZakatMaal(),
+        "/mustahik": (BuildContext context) => Mustahik(),
+        "/emasperak": (BuildContext context) => HitungEmasPerak(),
+        "/perniagaan": (BuildContext context) => HitungZakatPerniagaan(),
+        "/hartatemuan": (BuildContext context) => HitungZakatHartaTemuan(),
+        "/profesi": (BuildContext context) => HitungZakatProfesi(),
+        "/hasilpertanian": (BuildContext context) => HitungZakatPertanian(),
+        "/hasiltambang": (BuildContext context) => HitungZakatHasilTambang(),
+        "/hewanternak": (BuildContext context) => HitungZakatHewanTernak(),
+        "/jadwalsholat": (BuildContext context) => JadwalShalat(),
+        "/baznas": (BuildContext context) => Baznas(),
+        "/rumahzakat": (BuildContext context) => RumahZakat(),
+        "/dompetdhuafa": (BuildContext context) => DompetDhuafa(),
+        "/catat": (BuildContext context) => CatatZakat(),
+        "/add": (BuildContext context) => TambahCatatan(),
       },
       theme: ThemeData(
         primaryColor: Color(0xFF56A74D),
-
       ),
     );
   }

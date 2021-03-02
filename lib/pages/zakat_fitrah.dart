@@ -13,20 +13,24 @@ class _ZakatFitrahState extends State<ZakatFitrah> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("ZAKAT FITRAH", style: TextStyle(fontFamily: 'montserrat', fontWeight: FontWeight.bold),),
+        title: Text(
+          "ZAKAT FITRAH",
+          style:
+              TextStyle(fontFamily: 'montserrat', fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
       ),
       body: StreamBuilder(
         stream: Firestore.instance.collection('ZakatFitrah').snapshots(),
-        builder: (context, snapshot){
-          if(!snapshot.hasData){
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
             return Center(
               child: SpinKitFadingCircle(
                 color: Colors.green,
                 duration: Duration(seconds: 2),
               ),
             );
-          }else{
+          } else {
             return ListView(
               children: <Widget>[
                 Row(
@@ -34,7 +38,10 @@ class _ZakatFitrahState extends State<ZakatFitrah> {
                     Container(
                       height: 300,
                       width: MediaQuery.of(context).size.width,
-                      child: Image.network(snapshot.data.documents[0].data["img"],fit: BoxFit.fill,),
+                      child: Image.network(
+                        snapshot.data.documents[0].data["img"],
+                        fit: BoxFit.fill,
+                      ),
                     )
                   ],
                 ),
@@ -43,8 +50,13 @@ class _ZakatFitrahState extends State<ZakatFitrah> {
                     Container(
                       width: MediaQuery.of(context).size.width,
                       padding: EdgeInsets.all(10.0),
-                      child: Text(snapshot.data.documents[0].data["content"].replaceAll("\\n", "\n"),textAlign: TextAlign.justify,
-                        style: TextStyle(fontFamily: 'montserrat',fontSize: 17),),
+                      child: Text(
+                        snapshot.data.documents[0].data["content"]
+                            .replaceAll("\\n", "\n"),
+                        textAlign: TextAlign.justify,
+                        style:
+                            TextStyle(fontFamily: 'montserrat', fontSize: 17),
+                      ),
                     ),
                   ],
                 ),

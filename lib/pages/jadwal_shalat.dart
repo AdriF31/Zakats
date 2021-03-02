@@ -1,4 +1,3 @@
-
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
@@ -22,8 +21,11 @@ class JadwalShalatState extends State<JadwalShalat> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("JADWAL SHALAT",
-        style: TextStyle(fontFamily: 'montserrat', fontWeight: FontWeight.bold),),
+        title: Text(
+          "JADWAL SHALAT",
+          style:
+              TextStyle(fontFamily: 'montserrat', fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
@@ -31,8 +33,7 @@ class JadwalShalatState extends State<JadwalShalat> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(
-            color: Color.fromRGBO(32, 106, 93, 1)),
+        decoration: BoxDecoration(color: Color.fromRGBO(32, 106, 93, 1)),
         child: Stack(
           children: <Widget>[
             blurBackground(),
@@ -42,10 +43,16 @@ class JadwalShalatState extends State<JadwalShalat> {
                 children: <Widget>[
                   selected == null
                       ? Container()
-                      : !error ? detailJadwal() : Container(),
+                      : !error
+                          ? detailJadwal()
+                          : Container(),
                   data.length == 0
-                      ? !error ? listShimmer() : errorNotValid()
-                      : !error ? listviewData() : errorNotValid(),
+                      ? !error
+                          ? listShimmer()
+                          : errorNotValid()
+                      : !error
+                          ? listviewData()
+                          : errorNotValid(),
                   SizedBox(
                     height: 80.0,
                   )
@@ -224,7 +231,7 @@ class JadwalShalatState extends State<JadwalShalat> {
       height: 50.0,
       child: FlatButton(
         shape:
-        RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
         color: Color(0xFF56A74D),
         child: Text(
           "Refresh",
@@ -240,9 +247,9 @@ class JadwalShalatState extends State<JadwalShalat> {
 
   Widget shimmerObject(
       {BorderRadius radius,
-        double width,
-        double height,
-        EdgeInsetsGeometry margin}) {
+      double width,
+      double height,
+      EdgeInsetsGeometry margin}) {
     return Container(
       margin: margin ?? EdgeInsets.symmetric(vertical: 5.0),
       decoration: BoxDecoration(

@@ -4,7 +4,6 @@ import 'package:zakats/pages/home.dart';
 import 'package:zakats/pages/jadwal_shalat.dart';
 import 'package:zakats/utils/icon_app_icons.dart';
 
-
 class Navigasi extends StatefulWidget {
   @override
   _NavigasiState createState() => _NavigasiState();
@@ -19,6 +18,7 @@ class _NavigasiState extends State<Navigasi> {
 
   Widget currentScreen = HomePage();
   final PageStorageBucket bucket = PageStorageBucket();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,22 +29,20 @@ class _NavigasiState extends State<Navigasi> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.edit),
         backgroundColor: Colors.green,
-        onPressed: (){
+        onPressed: () {
           showAlertDialog(context);
         },
       ),
-
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
-        child: new Row(
+        child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             IconButton(
               icon: Icon(Icons.home),
-              color: currentTab==0? Colors.green : Colors.grey[400],
+              color: currentTab == 0 ? Colors.green : Colors.grey[400],
               onPressed: () {
                 setState(() {
                   currentScreen = HomePage();
@@ -54,7 +52,7 @@ class _NavigasiState extends State<Navigasi> {
             ),
             IconButton(
               icon: Icon(IconApp.muslim),
-              color: currentTab==1? Colors.green : Colors.grey[400],
+              color: currentTab == 1 ? Colors.green : Colors.grey[400],
               onPressed: () {
                 setState(() {
                   currentScreen = JadwalShalat();
@@ -69,8 +67,8 @@ class _NavigasiState extends State<Navigasi> {
     );
   }
 }
-showAlertDialog(BuildContext context) {
 
+showAlertDialog(BuildContext context) {
   // set up the button
   Widget okButton = FlatButton(
     child: Text("OK"),
@@ -81,8 +79,15 @@ showAlertDialog(BuildContext context) {
 
   // set up the AlertDialog
   AlertDialog alert = AlertDialog(
-    title: Text("Fitur belum tersedia", style: TextStyle(fontFamily: 'montserrat', fontSize: 20, fontWeight: FontWeight.bold),),
-    content: Text("Tunggu Update selanjutnya :)", style: TextStyle(fontFamily: 'montserrat', fontSize: 16),),
+    title: Text(
+      "Fitur belum tersedia",
+      style: TextStyle(
+          fontFamily: 'montserrat', fontSize: 20, fontWeight: FontWeight.bold),
+    ),
+    content: Text(
+      "Tunggu Update selanjutnya :)",
+      style: TextStyle(fontFamily: 'montserrat', fontSize: 16),
+    ),
     actions: [
       okButton,
     ],

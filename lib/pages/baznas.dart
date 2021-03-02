@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class Baznas extends StatefulWidget {
-  @override
-  _BaznasState createState() => _BaznasState();
-}
-
-class _BaznasState extends State<Baznas> {
+class Baznas extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class DompetDhuafa extends StatefulWidget {
-  @override
-  _DompetDhuafaState createState() => _DompetDhuafaState();
-}
-
-class _DompetDhuafaState extends State<DompetDhuafa> {
+class DompetDhuafa extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

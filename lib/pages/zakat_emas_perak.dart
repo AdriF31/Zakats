@@ -7,11 +7,13 @@ class HitungEmasPerak extends StatefulWidget {
   _HitungEmasPerakState createState() => _HitungEmasPerakState();
 }
 
-class _HitungEmasPerakState extends State<HitungEmasPerak> with SingleTickerProviderStateMixin{
+class _HitungEmasPerakState extends State<HitungEmasPerak>
+    with SingleTickerProviderStateMixin {
   TabController controller;
+
   @override
   void initState() {
-    controller = new TabController(length: 2, vsync: this);
+    controller = TabController(length: 2, vsync: this);
     super.initState();
   }
 
@@ -20,26 +22,32 @@ class _HitungEmasPerakState extends State<HitungEmasPerak> with SingleTickerProv
     controller.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("ZAKAT EMAS DAN PERAK", style: TextStyle(fontFamily: 'montserrat', fontWeight: FontWeight.bold),),
+        title: Text(
+          "ZAKAT EMAS DAN PERAK",
+          style:
+              TextStyle(fontFamily: 'montserrat', fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
         bottom: TabBar(
           controller: controller,
           tabs: <Widget>[
-            Tab(text: 'EMAS',),
-            Tab(text: 'PERAK',),
+            Tab(
+              text: 'EMAS',
+            ),
+            Tab(
+              text: 'PERAK',
+            ),
           ],
         ),
       ),
       body: TabBarView(
         controller: controller,
-        children: <Widget>[
-         HitungEmas(),
-         HitungPerak()
-        ],
+        children: <Widget>[HitungEmas(), HitungPerak()],
       ),
     );
   }

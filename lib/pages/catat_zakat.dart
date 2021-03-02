@@ -5,20 +5,15 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:intl/intl.dart';
 
-class CatatZakat extends StatefulWidget {
-  @override
-  _CatatZakatState createState() => _CatatZakatState();
-}
-
-class _CatatZakatState extends State<CatatZakat> {
+class CatatZakat extends StatelessWidget {
   Future getPost() async {
     var firestore = Firestore.instance;
 
-    QuerySnapshot jenisZakat = await firestore.collection("CatatanZakat").getDocuments();
+    QuerySnapshot jenisZakat = await firestore.collection("CatatanZakat")
+        .getDocuments();
 
     return jenisZakat.documents;
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,13 +63,6 @@ class _CatatZakatState extends State<CatatZakat> {
                 }
             );
 
-
-            /*+ListTile(
-              title: Text(snapshot.data.documents[0].data["jenisZakat"].replaceAll("\\n", "\n"),textAlign: TextAlign.justify,
-                style: TextStyle(fontFamily: 'montserrat',fontSize: 17),),
-              subtitle:Text(DateFormat.yMMMd().add_jm().format(DateTime.parse(snapshot.data.documents[0].data['tanggalZakat'].toDate().toString()))),
-                leading: Text(snapshot.data.documents[0].data["jumlahZakat"].toString()),
-            );*/
           }
         },
       )
